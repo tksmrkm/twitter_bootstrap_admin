@@ -5,13 +5,13 @@
     <?php
         echo $this->Html->meta(array('name' => 'viewport', 'content' => 'width=device-width, initial-scale=1.0'));
         echo $this->fetch('meta');
-        echo $this->Html->css('/bootstrap/css/bootstrap.min');
-        echo $this->Html->css('/jquery-ui/themes/jquery-ui.min');
-        echo $this->Html->css('/jquery-ui/themes/theme');
+        echo $this->Html->css('TwitterBootstrapAdmin./bootstrap/css/bootstrap.min');
+        echo $this->Html->css('TwitterBootstrapAdmin./jquery-ui/themes/jquery-ui.min');
+        echo $this->Html->css('TwitterBootstrapAdmin./jquery-ui/themes/theme');
         echo $this->fetch('css');
-        echo $this->Html->script('jquery/jquery.min');
-        echo $this->Html->script('/jquery-ui/jquery-ui.min');
-        echo $this->Html->script('/bootstrap/js/bootstrap.min');
+        echo $this->Html->script('TwitterBootstrapAdmin.jquery/jquery.min');
+        echo $this->Html->script('TwitterBootstrapAdmin./jquery-ui/jquery-ui.min');
+        echo $this->Html->script('TwitterBootstrapAdmin./bootstrap/js/bootstrap.min');
         echo $this->fetch('script');
     ?>
     <title><?php echo $title_for_layout ? $title_for_layout . ' | ' : null; ?>管理画面</title>
@@ -34,8 +34,5 @@
             </aside>
         </div>
     </section>
-    <footer>
-        &copy; mog-lion.com
-    </footer>
 </body>
 </html>
