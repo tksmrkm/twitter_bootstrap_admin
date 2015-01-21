@@ -92,16 +92,23 @@ foreach ($relations as $alias => $details):
         </thead>
         <tbody>
 <?php
-echo "\t\t<?php foreach (\${$singularVar}['{$alias}'] as \${$otherSingularVar}): ?>\n";
+echo "\t\t<?php foreach (\${$singularVar}['{$alias}'] as \$key => \${$otherSingularVar}): ?>\n";
         echo "\t\t\t<tr>\n";
             foreach ($details['fields'] as $field) {
                 echo "\t\t\t\t<td><?php echo \${$otherSingularVar}['{$field}']; ?></td>\n";
             }
 
             echo "\t\t\t\t<td class=\"actions\">\n";
-            echo "\t\t\t\t\t<?php echo \$this->Html->link(__('View'), array('controller' => '{$details['controller']}', 'action' => 'view', \${$otherSingularVar}['{$details['primaryKey']}'])); ?>\n";
-            echo "\t\t\t\t\t<?php echo \$this->Html->link(__('Edit'), array('controller' => '{$details['controller']}', 'action' => 'edit', \${$otherSingularVar}['{$details['primaryKey']}'])); ?>\n";
-            echo "\t\t\t\t\t<?php echo \$this->Form->postLink(__('Delete'), array('controller' => '{$details['controller']}', 'action' => 'delete', \${$otherSingularVar}['{$details['primaryKey']}']), array(), __('Are you sure you want to delete # %s?', \${$otherSingularVar}['{$details['primaryKey']}'])); ?>\n";
+        ?>
+                    <div class="dropdown clearfix">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="<?php echo $singularVar, '<?php echo $key; ?>'; ?>" data-toggle="dropdown" aria-expanded="true"><?php echo __('Actions'); ?><span class="caret"></span></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="<?php echo $singularVar, '<?php echo $key; ?>'; ?>">
+                            <li role="presentation"><?php echo "<?php echo \$this->Html->link(__('View'), array('controller' => '{$details['controller']}', 'action' => 'view', \${$otherSingularVar}['{$details['primaryKey']}'])); ?>"; ?></li>
+                            <li role="presentation"><?php echo "<?php echo \$this->Html->link(__('Edit'), array('controller' => '{$details['controller']}', 'action' => 'edit', \${$otherSingularVar}['{$details['primaryKey']}'])); ?>"; ?></li>
+                            <li role="presentation"><?php echo "<?php echo \$this->Form->postLink(__('Delete'), array('controller' => '{$details['controller']}', 'action' => 'delete', \${$otherSingularVar}['{$details['primaryKey']}']), array(), __('Are you sure you want to delete # %s?', \${$otherSingularVar}['{$details['primaryKey']}'])); ?>"; ?></li>
+                        </ul>
+                    </div>
+        <?php
             echo "\t\t\t\t</td>\n";
         echo "\t\t\t</tr>\n";
 
