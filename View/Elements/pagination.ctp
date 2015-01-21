@@ -1,7 +1,7 @@
 <p>
 <?php
     echo $this->Paginator->counter(array(
-        'format' => 'Page: {:page}/{:pages}, Records: {:start}-{:end}/{:count}'
+        'format' => 'Pages: {:page}/{:pages}, Records: {:start}-{:end}/{:count}'
     ));
 ?>
 </p>
