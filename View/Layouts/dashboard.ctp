@@ -14,7 +14,7 @@
         echo $this->Html->script('TwitterBootstrapAdmin./bootstrap/js/bootstrap.min');
         echo $this->fetch('script');
     ?>
-    <title><?php echo $title_for_layout ? $title_for_layout . ' | ' : null; ?><?php __('Dashboard'); ?></title>
+    <title><?php echo $title_for_layout ? $title_for_layout . ' | ' : null; ?><?php echo __('Dashboard'); ?></title>
 </head>
 <body>
     <header><h1><?php __('Dashboard'); ?></h1></header>
