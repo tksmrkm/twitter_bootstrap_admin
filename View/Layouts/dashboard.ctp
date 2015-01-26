@@ -16,20 +16,24 @@
     <title><?php echo $title_for_layout ? $title_for_layout . ' | ' : null; ?><?php echo __('Dashboard'); ?></title>
 </head>
 <body>
-    <header><h1><?php __('Dashboard'); ?></h1></header>
+    <?php
+        if($this->elementExists('dashboard/global_nav')){
+            echo $this->element('dashboard/global_nav');
+        }
+    ?>
+    <header class="header container-fluid"><h1><?php echo __('Dashboard'); ?></h1></header>
     <section class="container-fluid">
         <div class="row">
             <main class="col-md-9">
                 <?php echo $this->fetch('content'); ?>
             </main>
             <aside class="col-md-3">
-                <?php echo $this->fetch('sidebar_actions'); ?>
-                <div class="panel panel-default">
-                    <div class="panel-heading">Heading</div>
-                    <ul class="list-group">
-                        <li class="list-group-item">Items</li>
-                    </ul>
-                </div>
+                <?php echo $this->fetch('related_actions'); ?>
+                <?php
+                    if($this->elementExists('dashboard/sidebar')){
+                        echo $this->element('dashboard/sidebar');
+                    }
+                ?>
             </aside>
         </div>
     </section>

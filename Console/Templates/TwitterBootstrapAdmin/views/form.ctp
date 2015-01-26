@@ -27,7 +27,7 @@
     <?php echo "<?php echo \$this->Form->end(); ?>\n"; ?>
 </div>
 
-<?php echo "<?php \$this->start('sidebar_actions'); ?>\n"; ?>
+<?php echo "<?php \$this->start('related_actions'); ?>\n"; ?>
 <div class="panel panel-default">
     <div class="panel-heading"><?php echo "<?php echo __('Actions'); ?>"; ?></div>
     <ul class="list-group">
