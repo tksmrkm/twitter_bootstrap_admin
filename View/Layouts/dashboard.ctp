@@ -6,8 +6,8 @@
         echo $this->Html->meta(array('name' => 'viewport', 'content' => 'width=device-width, initial-scale=1.0'));
         echo $this->fetch('meta');
         echo $this->Html->css('TwitterBootstrapAdmin./bootstrap/css/bootstrap.min');
-        echo $this->Html->css('TwitterBootstrapAdmin./jquery-ui/themes/jquery-ui.min');
-        echo $this->Html->css('TwitterBootstrapAdmin./jquery-ui/themes/theme');
+        echo $this->Html->css('TwitterBootstrapAdmin./jquery-ui/jquery-ui.min');
+        echo $this->Html->css('TwitterBootstrapAdmin./jquery-ui/themes/base/theme');
         echo $this->fetch('css');
         echo $this->Html->script('TwitterBootstrapAdmin.jquery/jquery.min');
         echo $this->Html->script('TwitterBootstrapAdmin./jquery-ui/jquery-ui.min');
