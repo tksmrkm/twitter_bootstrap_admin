@@ -17,6 +17,27 @@
     "tests"
   ],
   "dependencies": {
-    "ckeditor": "~4.4.6"
+    "ckeditor": "~4.4.6",
+    "jquery-ui": "~1.11.2",
+    "bootstrap": "~3.3.2",
+    "jquery": "~2.1.3"
+  },
+  "exportsOverride": {
+    "ckeditor": {
+      "js": "**/*.js",
+      "css": "**/*.css"
+    },
+    "jquery-ui": {
+      "js": "**/*.js",
+      "css": "**/*.css"
+    },
+    "jquery": {
+      "js": "**/*.js"
+    },
+    "bootstrap": {
+      "js": "**/*.js",
+      "css": "**/*.css",
+      "font": "**/glyphicons-halflings-regular.*"
+    }
   }
 }

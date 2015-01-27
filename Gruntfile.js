@@ -5,7 +5,7 @@ module.exports = function(grunt) {
         bower: {
             install: {
                 options: {
-                    targetDir: './webroot',
+                    targetDir: './webroot/lib',
                     layout: 'byType',
                     install: true,
                     verbose: false,
@@ -17,5 +17,4 @@ module.exports = function(grunt) {
     });
 
     grunt.loadNpmTasks('grunt-bower-task');
-    grunt.registerTask
 };
