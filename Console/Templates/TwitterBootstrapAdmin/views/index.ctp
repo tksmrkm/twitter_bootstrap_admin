@@ -58,14 +58,14 @@
 <div class="panel panel-default">
     <div class="panel-heading"><?php echo "<?php echo __('Actions'); ?>"; ?></div>
     <ul class="list-group">
-        <li class="list-group-item"><?php echo "<?php echo \$this->Html->link(__('New " . $singularHumanName . "'), array('action' => 'add')); ?>"; ?></li>
+        <?php echo "<?php echo \$this->Html->link(__('New " . $singularHumanName . "') . '<span class=\"pull-right glyphicon glyphicon-chevron-right\"></span>', array('action' => 'add'), array('class' => 'list-group-item', 'escape' => false)); ?>\n"; ?>
 <?php
     $done = array();
     foreach ($associations as $type => $data) {
         foreach ($data as $alias => $details) {
             if ($details['controller'] != $this->name && !in_array($details['controller'], $done)) {
-                echo "\t\t<li class=\"list-group-item\"><?php echo \$this->Html->link(__('List " . Inflector::humanize($details['controller']) . "'), array('controller' => '{$details['controller']}', 'action' => 'index')); ?> </li>\n";
-                echo "\t\t<li class=\"list-group-item\"><?php echo \$this->Html->link(__('New " . Inflector::humanize(Inflector::underscore($alias)) . "'), array('controller' => '{$details['controller']}', 'action' => 'add')); ?> </li>\n";
+                echo "\t\t<?php echo \$this->Html->link(__('List " . Inflector::humanize($details['controller']) . "') . '<span class=\"pull-right glyphicon glyphicon-chevron-right\"></span>', array('controller' => '{$details['controller']}', 'action' => 'index'), array('class' => 'list-group-item', 'escape' => false)); ?>\n";
+                echo "\t\t<?php echo \$this->Html->link(__('New " . Inflector::humanize(Inflector::underscore($alias)) . "') . '<span class=\"pull-right glyphicon glyphicon-chevron-right\"></span>', array('controller' => '{$details['controller']}', 'action' => 'add'), array('class' => 'list-group-item', 'escape' => false)); ?>\n";
                 $done[] = $details['controller'];
             }
         }

@@ -28,17 +28,17 @@ foreach ($fields as $field) {
     <div class="panel-heading"><?php echo "<?php echo __('Actions'); ?>"; ?></div>
     <ul class="list-group">
 <?php
-    echo "\t\t<li class=\"list-group-item\"><?php echo \$this->Html->link(__('Edit " . $singularHumanName ."'), array('action' => 'edit', \${$singularVar}['{$modelClass}']['{$primaryKey}'])); ?> </li>\n";
-    echo "\t\t<li class=\"list-group-item\"><?php echo \$this->Form->postLink(__('Delete " . $singularHumanName . "'), array('action' => 'delete', \${$singularVar}['{$modelClass}']['{$primaryKey}']), array(), __('Are you sure you want to delete # %s?', \${$singularVar}['{$modelClass}']['{$primaryKey}'])); ?> </li>\n";
-    echo "\t\t<li class=\"list-group-item\"><?php echo \$this->Html->link(__('List " . $pluralHumanName . "'), array('action' => 'index')); ?> </li>\n";
-    echo "\t\t<li class=\"list-group-item\"><?php echo \$this->Html->link(__('New " . $singularHumanName . "'), array('action' => 'add')); ?> </li>\n";
+    echo "\t\t<?php echo \$this->Html->link(__('Edit " . $singularHumanName ."') . '<span class=\"pull-right glyphicon glyphicon-chevron-right\"></span>', array('action' => 'edit', \${$singularVar}['{$modelClass}']['{$primaryKey}']), array('class' => 'list-group-item', 'escape' => false)); ?>\n";
+    echo "\t\t<?php echo \$this->Form->postLink(__('Delete " . $singularHumanName . "') . '<span class=\"pull-right glyphicon glyphicon-chevron-right\"></span>', array('action' => 'delete', \${$singularVar}['{$modelClass}']['{$primaryKey}']), array('class' => 'list-group-item', 'escape' => false), __('Are you sure you want to delete # %s?', \${$singularVar}['{$modelClass}']['{$primaryKey}'])); ?>\n";
+    echo "\t\t<?php echo \$this->Html->link(__('List " . $pluralHumanName . "') . '<span class=\"pull-right glyphicon glyphicon-chevron-right\"></span>', array('action' => 'index'), array('class' => 'list-group-item', 'escape' => false)); ?>\n";
+    echo "\t\t<?php echo \$this->Html->link(__('New " . $singularHumanName . "') . '<span class=\"pull-right glyphicon glyphicon-chevron-right\"></span>', array('action' => 'add'), array('class' => 'list-group-item', 'escape' => false)); ?>\n";
 
     $done = array();
     foreach ($associations as $type => $data) {
         foreach ($data as $alias => $details) {
             if ($details['controller'] != $this->name && !in_array($details['controller'], $done)) {
-                echo "\t\t<li class=\"list-group-item\"><?php echo \$this->Html->link(__('List " . Inflector::humanize($details['controller']) . "'), array('controller' => '{$details['controller']}', 'action' => 'index')); ?> </li>\n";
-                echo "\t\t<li class=\"list-group-item\"><?php echo \$this->Html->link(__('New " . Inflector::humanize(Inflector::underscore($alias)) . "'), array('controller' => '{$details['controller']}', 'action' => 'add')); ?> </li>\n";
+                echo "\t\t<?php echo \$this->Html->link(__('List " . Inflector::humanize($details['controller']) . "') . '<span class=\"pull-right glyphicon glyphicon-chevron-right\"></span>', array('controller' => '{$details['controller']}', 'action' => 'index'), array('class' => 'list-group-item', 'escape' => false)); ?>\n";
+                echo "\t\t<?php echo \$this->Html->link(__('New " . Inflector::humanize(Inflector::underscore($alias)) . "') . '<span class=\"pull-right glyphicon glyphicon-chevron-right\"></span>', array('controller' => '{$details['controller']}', 'action' => 'add'), array('class' => 'list-group-item', 'escape' => false)); ?>\n";
                 $done[] = $details['controller'];
             }
         }
