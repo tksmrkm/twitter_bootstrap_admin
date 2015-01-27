@@ -1,4 +1,8 @@
-*.bk
-*.html
-bower_components
-node_modules
+# Directories #
+###############
+bower_components/
+node_modules/
+
+# Files #
+#########
+*.log

@@ -6,7 +6,7 @@ module.exports = function(grunt) {
             install: {
                 options: {
                     targetDir: './webroot/lib',
-                    layout: 'byType',
+                    layout: 'byComponent',
                     install: true,
                     verbose: false,
                     cleanTargetDir: true,

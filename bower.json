@@ -23,21 +23,21 @@
     "jquery": "~2.1.3"
   },
   "exportsOverride": {
-    "ckeditor": {
-      "js": "**/*.js",
-      "css": "**/*.css"
-    },
     "jquery-ui": {
-      "js": "**/*.js",
-      "css": "**/*.css"
+      "js": "*.js",
+      "css": "**/themes"
     },
     "jquery": {
-      "js": "**/*.js"
+      "js": [
+        "**/jquery.js",
+        "**/jquery.min.js",
+        "**/jquery.min.map"
+      ]
     },
     "bootstrap": {
-      "js": "**/*.js",
+      "js": "dist/**/*.js",
       "css": "**/*.css",
-      "font": "**/glyphicons-halflings-regular.*"
+      "fonts": "**/glyphicons-halflings-regular.*"
     }
   }
 }

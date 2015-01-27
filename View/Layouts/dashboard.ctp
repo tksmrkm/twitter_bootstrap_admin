@@ -5,12 +5,12 @@
     <?php
         echo $this->Html->meta(array('name' => 'viewport', 'content' => 'width=device-width, initial-scale=1.0'));
         echo $this->fetch('meta');
-        echo $this->Html->css('TwitterBootstrapAdmin./bootstrap/css/bootstrap.min');
-        echo $this->Html->css('TwitterBootstrapAdmin./jquery-ui/themes/base/theme');
+        echo $this->Html->css('TwitterBootstrapAdmin./lib/bootstrap/css/bootstrap.min');
+        echo $this->Html->css('TwitterBootstrapAdmin./lib/jquery-ui/css/base/theme');
         echo $this->fetch('css');
-        echo $this->Html->script('TwitterBootstrapAdmin.jquery/jquery.min');
-        echo $this->Html->script('TwitterBootstrapAdmin./jquery-ui/jquery-ui.min');
-        echo $this->Html->script('TwitterBootstrapAdmin./bootstrap/js/bootstrap.min');
+        echo $this->Html->script('TwitterBootstrapAdmin./lib/jquery/js/jquery.min');
+        echo $this->Html->script('TwitterBootstrapAdmin./lib/jquery-ui/js/jquery-ui.min');
+        echo $this->Html->script('TwitterBootstrapAdmin./lib/bootstrap/js/bootstrap.min');
         echo $this->fetch('script');
     ?>
     <title><?php echo $title_for_layout ? $title_for_layout . ' | ' : null; ?><?php echo __('Dashboard'); ?></title>
