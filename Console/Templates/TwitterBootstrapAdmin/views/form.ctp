@@ -32,16 +32,16 @@
     <div class="panel-heading"><?php echo "<?php echo __('Actions'); ?>"; ?></div>
     <ul class="list-group">
 <?php if (strpos($action, 'add') === false): ?>
-        <li class="list-group-item"><?php echo "<?php echo \$this->Form->postLink(__('Delete'), array('action' => 'delete', \$this->Form->value('{$modelClass}.{$primaryKey}')), array(), __('Are you sure you want to delete # %s?', \$this->Form->value('{$modelClass}.{$primaryKey}'))); ?>"; ?></li>
+        <?php echo "<?php echo \$this->Form->postLink(__('Delete') . '<span class=\"pull-right glyphicon glyphicon-chevron-right\"></span>', array('action' => 'delete', \$this->Form->value('{$modelClass}.{$primaryKey}')), array('class' => 'list-group-item', 'escape' => false), __('Are you sure you want to delete # %s?', \$this->Form->value('{$modelClass}.{$primaryKey}'))); ?>\n"; ?>
 <?php endif; ?>
-        <li class="list-group-item"><?php echo "<?php echo \$this->Html->link(__('List " . $pluralHumanName . "'), array('action' => 'index')); ?>"; ?></li>
+        <?php echo "<?php echo \$this->Html->link(__('List " . $pluralHumanName . "') . '<span class=\"pull-right glyphicon glyphicon-chevron-right\"></span>', array('action' => 'index'), array('class' => 'list-group-item', 'escape' => false)); ?>\n"; ?>
 <?php
         $done = array();
         foreach ($associations as $type => $data) {
             foreach ($data as $alias => $details) {
                 if ($details['controller'] != $this->name && !in_array($details['controller'], $done)) {
-                    echo "\t\t<li class=\"list-group-item\"><?php echo \$this->Html->link(__('List " . Inflector::humanize($details['controller']) . "'), array('controller' => '{$details['controller']}', 'action' => 'index')); ?> </li>\n";
-                    echo "\t\t<li class=\"list-group-item\"><?php echo \$this->Html->link(__('New " . Inflector::humanize(Inflector::underscore($alias)) . "'), array('controller' => '{$details['controller']}', 'action' => 'add')); ?> </li>\n";
+                    echo "\t\t<?php echo \$this->Html->link(__('List " . Inflector::humanize($details['controller']) . "') . '<span class=\"pull-right glyphicon glyphicon-chevron-right\"></span>', array('controller' => '{$details['controller']}', 'action' => 'index'), array('class' => 'list-group-item', 'escape' => false)); ?>\n";
+                    echo "\t\t<?php echo \$this->Html->link(__('New " . Inflector::humanize(Inflector::underscore($alias)) . "') . '<span class=\"pull-right glyphicon glyphicon-chevron-right\"></span>', array('controller' => '{$details['controller']}', 'action' => 'add'), array('class' => 'list-group-item', 'escape' => false)); ?>\n";
                     $done[] = $details['controller'];
                 }
             }
