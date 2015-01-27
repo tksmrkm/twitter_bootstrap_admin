@@ -1,0 +1,23 @@
+{
+  "name": "TwitterBootstrapAdmin",
+  "version": "1.0.0",
+  "description": "This software is released under the MIT License, see LICENSE.md.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tksmrkm/twitter_bootstrap_admin.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tksmrkm/twitter_bootstrap_admin/issues"
+  },
+  "homepage": "https://github.com/tksmrkm/twitter_bootstrap_admin",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-bower-task": "^0.4.0"
+  }
+}
