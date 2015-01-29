@@ -26,19 +26,21 @@
                         }
                     }
                     if ($isKey !== true) {
-                        echo "\t\t\t\t\t<td><?php echo h(\${$singularVar}['{$modelClass}']['{$field}']); ?>&nbsp;</td>\n";
+                        echo "\t\t\t\t\t<td><?php echo h(\${$singularVar}['{$modelClass}']['{$field}']); ?></td>\n";
                     }
                 }
 
                 echo "\t\t\t\t\t<td class=\"actions\">\n";
                     ?>
-                        <div class="dropdown clearfix">
-                            <button class="btn btn-default dropdown-toggle" type="button" id="<?php echo $singularVar, '<?php echo $key; ?>'; ?>" data-toggle="dropdown" aria-expanded="true"><?php echo __('Actions'); ?><span class="caret"></span></button>
-                            <ul class="dropdown-menu" role="menu" aria-labelledby="<?php echo $singularVar, '<?php echo $key; ?>'; ?>">
-                                <li role="presentation"><?php echo "<?php echo \$this->Html->link(__('View'), array('action' => 'view', \${$singularVar}['{$modelClass}']['{$primaryKey}'])); ?>"; ?></li>
-                                <li role="presentation"><?php echo "<?php echo \$this->Html->link(__('Edit'), array('action' => 'edit', \${$singularVar}['{$modelClass}']['{$primaryKey}'])); ?>"; ?></li>
-                                <li role="presentation"><?php echo "<?php echo \$this->Form->postLink(__('Delete'), array('action' => 'delete', \${$singularVar}['{$modelClass}']['{$primaryKey}']), array(), __('Are you sure you want to delete # %s?', \${$singularVar}['{$modelClass}']['{$primaryKey}'])); ?>"; ?></li>
-                            </ul>
+                        <div class="input-group">
+                            <select class="form-control doneAction">
+                                <option value="<?php echo "<?php echo \$this->Html->url(array('action' => 'edit', \${$singularVar}['{$modelClass}']['{$primaryKey}'])); ?>"; ?>"><?php echo "<?php echo __('Edit') ?>"; ?></option>
+                                <option value="<?php echo "<?php echo \$this->Html->url(array('action' => 'view', \${$singularVar}['{$modelClass}']['{$primaryKey}'])); ?>"; ?>"><?php echo "<?php echo __('View') ?>"; ?></option>
+                                <option value="<?php echo "<?php echo \$this->Html->url(array('action' => 'delete', \${$singularVar}['{$modelClass}']['{$primaryKey}'])); ?>"; ?>"><?php echo "<?php echo __('Delete') ?>"; ?></option>
+                            </select>
+                            <span class="input-group-btn doAction">
+                                <button class="btn btn-default" type="button">Go!</button>
+                            </span>
                         </div>
                     <?php
                 echo "</td>\n";
@@ -74,3 +76,5 @@
     </ul>
 </div>
 <?php echo "<?php \$this->end(); ?>\n"; ?>
+
+<?php echo "<?php echo \$this->Html->script('TwitterBootstrapAdmin.doAction', array('inline' => false)); ?>"; ?>

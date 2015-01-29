@@ -24,9 +24,12 @@
     <header class="header container-fluid"><h1><?php echo __('Dashboard'); ?></h1></header>
     <section class="container-fluid">
         <div class="row">
-            <main class="col-md-9">
-                <?php echo $this->fetch('content'); ?>
-            </main>
+            <section class="col-md-9">
+                <?php echo $this->Session->flash('flash', array('element' => 'TwitterBootstrapAdmin.flash')); ?>
+                <main id="main">
+                    <?php echo $this->fetch('content'); ?>
+                </main>
+            </section>
             <aside class="col-md-3">
                 <?php echo $this->fetch('related_actions'); ?>
                 <?php
