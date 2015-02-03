@@ -7,6 +7,7 @@
         echo $this->fetch('meta');
         echo $this->Html->css('TwitterBootstrapAdmin./lib/bootstrap/css/bootstrap.min');
         echo $this->Html->css('TwitterBootstrapAdmin./lib/jquery-ui/css/base/theme');
+        echo $this->Html->css('TwitterBootstrapAdmin.base');
         echo $this->fetch('css');
         echo $this->Html->script('TwitterBootstrapAdmin./lib/jquery/js/jquery.min');
         echo $this->Html->script('TwitterBootstrapAdmin./lib/jquery-ui/js/jquery-ui.min');
