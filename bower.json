@@ -29,11 +29,7 @@
       "css": "**/themes"
     },
     "jquery": {
-      "js": [
-        "**/jquery.js",
-        "**/jquery.min.js",
-        "**/jquery.min.map"
-      ]
+      "js": "dist/**"
     },
     "bootstrap": {
       "js": "dist/**/*.js",
