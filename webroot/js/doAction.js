@@ -1,5 +1,5 @@
 $(function(){
-    $('.doAction').on('click', function(){
+    $('table.table').on('click', '.doAction', function(){
         var result = $(this).parents('.input-group').find('.doneAction').val();
         var flag = false;
         if(result.match(/\/delete\/[0-9]+/)){
