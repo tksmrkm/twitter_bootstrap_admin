@@ -1,6 +1,6 @@
 {
   "name": "TwitterBootstrapAdmin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This software is released under the MIT License, see LICENSE.md.",
   "main": "index.js",
   "scripts": {
