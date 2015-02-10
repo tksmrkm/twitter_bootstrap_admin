@@ -2,9 +2,7 @@
   "name": "TwitterBootstrapAdmin",
   "version": "0.0.1",
   "homepage": "https://github.com/tksmrkm/twitter_bootstrap_admin",
-  "authors": [
-    "tksmrkm <nis.murakami@gmail.com>"
-  ],
+  "authors": [""],
   "moduleType": [
     "globals"
   ],
