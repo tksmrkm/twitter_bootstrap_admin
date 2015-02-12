@@ -1,0 +1,35 @@
+<nav class="navbar navbar-inverse navbar-static-top navbar-sm" role="navigation" id="adminBarContainer">
+    <div class="container-fluid">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#adminBar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <?php echo $this->Html->link('', '/', array('class' => 'navbar-brand glyphicon glyphicon-home')); ?>
+        </div>
+
+        <div class="collapse navbar-collapse" id="adminBar">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo __('DropDownMenu'); ?> <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><?php echo $this->Html->link(__('Relative link'), array('controller' => 'hoge', 'action' => 'fuga')); ?></li>
+                        <li><?php echo $this->Html->link(__('Relative link'), array('controller' => 'hoge', 'action' => 'fuga')); ?></li>
+                    </ul>
+                </li>
+                <li><?php echo $this->Html->link(__('Single action'), array('controller' => 'hoge', 'action' => 'fuga')); ?></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">ex)UserName <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><?php echo $this->Html->link(__('Log out'), array('controller' => 'users', 'action' => 'logout')); ?></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

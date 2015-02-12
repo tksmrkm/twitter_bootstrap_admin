@@ -1,0 +1,6 @@
+<div class="panel panel-default">
+    <div class="panel-heading">Actions</div>
+    <ul class="list-group">
+        <a href="#" class="list-group-item">Menu<span class="glyphicon glyphicon-chevron-right pull-right"></span></a>
+    </ul>
+</div>
