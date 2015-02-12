@@ -2,7 +2,9 @@
   "name": "TwitterBootstrapAdmin",
   "version": "1.0.1",
   "homepage": "https://github.com/tksmrkm/twitter_bootstrap_admin",
-  "authors": [""],
+  "authors": [
+    ""
+  ],
   "moduleType": [
     "globals"
   ],
@@ -19,7 +21,8 @@
     "jquery-ui": "~1.11.2",
     "bootstrap": "~3.3.2",
     "jquery": "~2.1.3",
-    "selectize": "~0.12.0"
+    "selectize": "~0.12.0",
+    "font-awesome": "~4.3.0"
   },
   "exportsOverride": {
     "jquery-ui": {
@@ -37,6 +40,10 @@
     "selectize": {
       "js": "dist/js/**",
       "css": "dist/css/**"
+    },
+    "font-awesome": {
+      "css": "css/**",
+      "fonts": "fonts/**"
     }
   }
 }

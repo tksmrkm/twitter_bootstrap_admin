@@ -12,6 +12,16 @@ module.exports = function(grunt) {
                     cleanTargetDir: true,
                     cleanBowerDir: false
                 }
+            },
+            update: {
+                options: {
+                    targetDir: './webroot/lib',
+                    layout: 'byComponent',
+                    install: false,
+                    verbose: false,
+                    cleanTargetDir: false,
+                    cleanBowerDir: false
+                }
             }
         }
     });
