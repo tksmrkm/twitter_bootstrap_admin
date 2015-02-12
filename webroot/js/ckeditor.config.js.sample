@@ -1,0 +1,3 @@
+CKEDITOR.editorConfig = function(config){
+    // copy to app/webroot/js/ckeditor.config.js
+}

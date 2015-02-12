@@ -12,11 +12,12 @@ class CkeditorHelper extends AppHelper {
         echo $this->Html->script('TwitterBootstrapAdmin./lib/ckeditor/ckeditor', array('inline' => false));
     }
     public function load($id){
-        $did = '';
-        foreach(explode('.', $id) as $v){
-            $did .= ucfirst($v);
-        }
-        $code = "var EditorObj" . $did . " = CKEDITOR.replace('" . $did . "');";
+        $cameled_id = preg_replace('/ /', '', ucwords(preg_replace('/[\._]/', ' ', $id)));
+        $config_path = ROOT . DS . APP_DIR . DS . WEBROOT_DIR . DS . 'js' . DS . 'ckeditor.config.js';
+        $config_url  = $this->Html->url('/js/ckeditor.config.js');
+        $code = '';
+        $code .= file_exists($config_path) ? "CKEDITOR.config.customConfig = '{$config_url}';" : null;
+        $code .= "var EditorObj" . $cameled_id . " = CKEDITOR.replace('" . $cameled_id . "');";
         return $this->Html->scriptBlock($code, array('safe' => false));
     }
     public function input($id){

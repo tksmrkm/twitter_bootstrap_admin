@@ -19,14 +19,14 @@ class TaggingHelper extends AppHelper {
             echo $this->Html->css('TwitterBootstrapAdmin./lib/selectize/css/selectize.bootstrap3', array('inline' => false));
             echo $this->Html->css('TwitterBootstrapAdmin./lib/selectize/css/selectize.default', array('inline' => false));
             echo $this->Html->script('TwitterBootstrapAdmin./lib/selectize/js/selectize.min', array('inline' => false));
-            $did = '';
-            foreach(explode('.', $id) as $v){
-                $did .= ucfirst($v);
-            }
+            $cameled_id = preg_replace('/ /', '', ucwords(preg_replace('/[\._]/', ' ', $id)));
             $options_json = json_encode($options);
 $code = <<<SCRIPT
 $(function(){
-    $('#{$did}').selectize({
+    $('#{$cameled_id}').selectize({
+        plugins: [
+            'restore_on_backspace'
+        ],
         delimiter: ', ',
         persist: false,
         create: function(input){
