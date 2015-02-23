@@ -1,7 +1,7 @@
 <div class="<?php echo $pluralVar; ?> form">
     <?php
         $legend = Inflector::humanize($action) . ' ' . $singularHumanName;
-        echo "<?php\n\t\techo \$this->Form->create('{$modelClass}', array(\n\t\t\t'inputDefaults' => array(\n\t\t\t\t'dateFormat' => 'YMD',\n\t\t\t\t'monthNames' => false,\n\t\t\t\t'empty' => '---',\n\t\t\t\t'div' => 'form-group',\n\t\t\t\t'class' => 'form-control',\n\t\t\t\t'label' => array(\n\t\t\t\t\t'class' => 'col-sm-2 control-label'\n\t\t\t\t),\n\t\t\t\t'after'  => '</div>',\n\t\t\t\t'between' => '<div class=\"col-sm-10\">'\n\t\t\t),\n\t\t\t'class' => 'form-horizontal',\n\t\t\t'role' => 'form'\n\t\t));\n\t\techo \$this->Form->inputs(array(\n\t\t\t'legend' => __('{$legend}'),\n";
+        echo "<?php\n\t\techo \$this->Form->create('{$modelClass}', array(\n\t\t\t'inputDefaults' => array(\n\t\t\t\t'empty' => '---',\n\t\t\t\t'div' => 'form-group',\n\t\t\t\t'class' => 'form-control',\n\t\t\t\t'label' => array(\n\t\t\t\t\t'class' => 'col-sm-2 control-label'\n\t\t\t\t),\n\t\t\t\t'after'  => '</div>',\n\t\t\t\t'between' => '<div class=\"col-sm-10\">'\n\t\t\t),\n\t\t\t'class' => 'form-horizontal',\n\t\t\t'role' => 'form'\n\t\t));\n\t\techo \$this->Form->inputs(array(\n\t\t\t'legend' => __('{$legend}'),\n";
 
         foreach ($fields as $field) {
             if (strpos($action, 'add') !== false && $field === $primaryKey) {
