@@ -25,7 +25,7 @@ class DatetimeHelper extends AppHelper {
         $options = json_encode($options);
 $code = <<<SCRIPT
 \$(function(){
-    \$({$cameled_id}).datetimepicker({$options});
+    \$('#{$cameled_id}').datetimepicker({$options});
 });
 SCRIPT;
         return $this->Html->scriptBlock($code, array('safe' => false));
