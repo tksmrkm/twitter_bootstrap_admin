@@ -21,6 +21,7 @@ class TwbsAdminShell extends AppShell {
         $copy_files = array(
             'View' . DS . 'Elements' . DS . 'dashboard' . DS . 'sidebar.ctp.sample',
             'View' . DS . 'Elements' . DS . 'dashboard' . DS . 'global_nav.ctp.sample',
+            'webroot' . DS . 'js' . DS . 'ckeditor.config.js.sample'
         );
         foreach($copy_files as $file){
             $source = $this->plugin_root . DS . $file;
@@ -34,7 +35,7 @@ class TwbsAdminShell extends AppShell {
 
             // copy
             if(file_exists($dest)){
-                $this->out('Already exsists: ' . $file);
+                $this->out('Exsists: ' . $file);
                 continue;
             }elseif(file_exists($source)){
                 if(copy($source, $dest)){
