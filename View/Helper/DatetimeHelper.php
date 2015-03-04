@@ -30,9 +30,10 @@ $code = <<<SCRIPT
 SCRIPT;
         return $this->Html->scriptBlock($code, array('safe' => false));
     }
-    public function input($id, $options = array()){
+    public function input($id, $options = array(), $settings = array()){
         $script = $this->_code($id, $options);
-        $form   = $this->Form->input($id, array('type' => 'text'));
+        $settings = array_merge(array('type' => 'text'), $settings);
+        $form   = $this->Form->input($id, $settings);
         return $form . $script;
     }
 }
