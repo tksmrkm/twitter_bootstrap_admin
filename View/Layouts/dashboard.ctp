@@ -9,10 +9,16 @@
         echo $this->Html->css('TwitterBootstrapAdmin./lib/jquery-ui/css/base/theme');
         echo $this->Html->css('TwitterBootstrapAdmin./lib/font-awesome/css/font-awesome.min');
         echo $this->Html->css('TwitterBootstrapAdmin.base');
+        if(file_exists(ROOT . DS . APP_DIR . DS . WEBROOT_DIR . DS . 'css' . DS . 'twbs_dashboard.base.css')){
+            echo $this->Html->css('twbs_dashboard.base');
+        }
         echo $this->fetch('css');
         echo $this->Html->script('TwitterBootstrapAdmin./lib/jquery/js/jquery.min');
         echo $this->Html->script('TwitterBootstrapAdmin./lib/jquery-ui/js/jquery-ui.min');
         echo $this->Html->script('TwitterBootstrapAdmin./lib/bootstrap/js/bootstrap.min');
+        if($this->Html->script('twbs_dashboard.main')){
+            echo $this->Html->script('twbs_dashboard.main');
+        }
         echo $this->fetch('script');
     ?>
     <title><?php echo $title_for_layout ? $title_for_layout . ' | ' : null; ?><?php echo __('Dashboard'); ?></title>
