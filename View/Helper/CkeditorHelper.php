@@ -11,7 +11,10 @@ class CkeditorHelper extends AppHelper {
         echo $this->Html->scriptBlock('const WEBROOT = "' . $this->Html->url('/') . '";', array('safe' => false, 'inline' => false));
         echo $this->Html->script('TwitterBootstrapAdmin./lib/ckeditor/ckeditor', array('inline' => false));
     }
-    public function load($id){
+    public function load($id = null){
+        if(is_null($id)){
+            return false;
+        }
         $cameled_id = preg_replace('/ /', '', ucwords(preg_replace('/[\._]/', ' ', $id)));
         $config_path = ROOT . DS . APP_DIR . DS . WEBROOT_DIR . DS . 'js' . DS . 'ckeditor.config.js';
         $config_url  = $this->Html->url('/js/ckeditor.config.js');
@@ -20,7 +23,10 @@ class CkeditorHelper extends AppHelper {
         $code .= "var EditorObj" . $cameled_id . " = CKEDITOR.replace('" . $cameled_id . "');";
         return $this->Html->scriptBlock($code, array('safe' => false));
     }
-    public function input($id){
+    public function input($id = null){
+        if(is_null($id)){
+            return false;
+        }
         $script = $this->load($id);
         $input = $this->Form->input($id);
         return $input . $script;

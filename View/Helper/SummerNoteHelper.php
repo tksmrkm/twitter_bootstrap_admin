@@ -1,5 +1,7 @@
 <?php
 
+App::uses('AppHelper', 'View/Helper');
+
 class SummerNoteHelper extends AppHelper {
     public $helpers = array(
         'Html',
@@ -11,6 +13,7 @@ class SummerNoteHelper extends AppHelper {
         echo $this->Html->script('TwitterBootstrapAdmin./lib/summernote/summernote.min', array('inline' => false));
     }
     public function input($id = null, $url = array()){
+        if(is_null($id)) return false;
         $cameled_id = preg_replace('/ /', '', ucwords(preg_replace('/[\._]/', ' ', $id)));
         $input = $this->Form->input($id);
         $url_array = empty($url) ? array('controller' => 'summernote', 'action' => 'upload', 'plugin' => 'twitter_bootstrap_admin') : $url;

@@ -12,13 +12,15 @@ class TaggingHelper extends AppHelper {
         'Html',
         'Form'
     );
+    public function beforeRender($viewFile){
+        echo $this->Html->css('TwitterBootstrapAdmin./lib/selectize/css/selectize.bootstrap3', array('inline' => false));
+        echo $this->Html->css('TwitterBootstrapAdmin./lib/selectize/css/selectize.default', array('inline' => false));
+        echo $this->Html->script('TwitterBootstrapAdmin./lib/selectize/js/selectize.min', array('inline' => false));
+    }
     public function input($id = null, $options = array()){
         if(is_null($id)){
             return false;
         }else{
-            echo $this->Html->css('TwitterBootstrapAdmin./lib/selectize/css/selectize.bootstrap3', array('inline' => false));
-            echo $this->Html->css('TwitterBootstrapAdmin./lib/selectize/css/selectize.default', array('inline' => false));
-            echo $this->Html->script('TwitterBootstrapAdmin./lib/selectize/js/selectize.min', array('inline' => false));
             $cameled_id = preg_replace('/ /', '', ucwords(preg_replace('/[\._]/', ' ', $id)));
             $options_json = json_encode($options);
 $code = <<<SCRIPT
@@ -40,7 +42,7 @@ $(function(){
 });
 SCRIPT;
             echo $this->Html->scriptBlock($code, array('safe' => false, 'inline' => false));
-            return $this->Form->input($id);
+            return $this->Form->input($id, array('type' => 'select'));
         }
     }
 }
