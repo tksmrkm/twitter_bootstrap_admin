@@ -43,8 +43,8 @@ class TaggingHelperTest extends CakeTestCase {
 	public function testInput() {
 		$result = $this->Tagging->input('News.created');
 		// '<div class="input select"><label for="TestUserId">User</label><select name="data[Test][user_id]" id="TestUserId"></select></div>'
-		$reg = '/<div(.*)?><label(.*)?>(.*)?<\/label><select(.*)?>\n?<\/select><\/div>/';
-		$this->assertRegExp($reg, $result);
+		$expected = '<div class="input text"><label for="NewsCreated">Created</label><input name="data[News][created]" type="text" id="NewsCreated"/></div>';
+		$this->assertEquals($expected, $result);
 	}
 
 }

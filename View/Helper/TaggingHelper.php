@@ -17,7 +17,7 @@ class TaggingHelper extends AppHelper {
         echo $this->Html->css('TwitterBootstrapAdmin./lib/selectize/css/selectize.default', array('inline' => false));
         echo $this->Html->script('TwitterBootstrapAdmin./lib/selectize/js/selectize.min', array('inline' => false));
     }
-    public function input($id = null, $options = array()){
+    public function input($id = null, $options = array(), $settings = array()){
         if(is_null($id)){
             return false;
         }else{
@@ -42,7 +42,7 @@ $(function(){
 });
 SCRIPT;
             echo $this->Html->scriptBlock($code, array('safe' => false, 'inline' => false));
-            return $this->Form->input($id, array('type' => 'select'));
+            return $this->Form->input($id, $settings);
         }
     }
 }
