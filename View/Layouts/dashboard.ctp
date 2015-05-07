@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <?php
         echo $this->Html->meta(array('name' => 'viewport', 'content' => 'width=device-width, initial-scale=1.0'));
+        $favicon = new File(WWW_ROOT . DS . 'favicon.ico');
+        if($favicon->exists()){
+            echo $this->Html->meta('icon');
+        }
         echo $this->fetch('meta');
         echo $this->Html->css('TwitterBootstrapAdmin./lib/bootstrap/css/bootstrap.min');
         echo $this->Html->css('TwitterBootstrapAdmin./lib/jquery-ui/css/base/theme');
